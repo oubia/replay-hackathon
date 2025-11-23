@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-gray-50 via-blue-50/30 to-gray-50 dark:bg-gradient-to-br dark:from-gray-950 dark:via-blue-950/20 dark:to-gray-950 text-gray-900 dark:text-gray-100 transition-colors duration-300;
+  }
+
+  /* Refined scrollbar styles */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply from-gray-400 to-gray-500 dark:from-gray-500 dark:to-gray-600;
+  }
+}
+
+@layer components {
+  .btn-icon {
+    @apply p-2.5 rounded-lg text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-all duration-200 hover:text-gray-700 dark:hover:text-gray-300;
+  }
+
+  .message-bubble {
+    @apply rounded-2xl px-4 py-3 shadow-sm text-sm leading-relaxed;
+  }
+
+  /* Health-specific animations */
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.1); }
+    50% { transform: scale(1); }
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  /* Report styling */
+  .report-section {
+    @apply rounded-lg border border-gray-200 dark:border-gray-700/50 p-4 transition-all duration-200;
+  }
+
+  .report-section-open {
+    @apply bg-gray-50 dark:bg-gray-700/20;
+  }
+
+  /* Document card */
+  .document-card {
+    @apply rounded-lg border border-gray-200 dark:border-gray-700/50 p-3 hover:shadow-md transition-all duration-200 cursor-pointer;
+  }
+
+  .document-card:hover {
+    @apply border-primary/50 dark:border-primary/30 shadow-lg shadow-primary/10;
+  }
+
+  /* Health badge */
+  .health-badge {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium bg-emerald-50 dark:bg-emerald-950/30 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50;
+  }
+
+  .health-badge.warning {
+    @apply bg-orange-50 dark:bg-orange-950/30 text-orange-700 dark:text-orange-300 border-orange-200 dark:border-orange-800/50;
+  }
+
+  .health-badge.critical {
+    @apply bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-300 border-red-200 dark:border-red-800/50;
+  }
+
+  /* Markdown styling for bot messages */
+  .prose h1, .prose h2, .prose h3 {
+    @apply text-gray-900 dark:text-gray-100 font-semibold;
+  }
+  
+  .prose h1 {
+    @apply text-xl mb-3 mt-4;
+  }
+  
+  .prose h2 {
+    @apply text-lg mb-2 mt-3;
+  }
+  
+  .prose h3 {
+    @apply text-base mb-2 mt-3;
+  }
+  
+  .prose p {
+    @apply my-2 text-gray-800 dark:text-gray-200;
+  }
+  
+  .prose strong {
+    @apply font-semibold text-gray-900 dark:text-gray-100;
+  }
+  
+  .prose ul, .prose ol {
+    @apply my-2 space-y-1;
+  }
+  
+  .prose li {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+  
+  .prose ul li::marker {
+    @apply text-blue-500 dark:text-cyan-400;
+  }
+  
+  .prose ol li::marker {
+    @apply text-blue-600 dark:text-cyan-400 font-semibold;
+  }
+  
+  .prose code {
+    @apply bg-gray-200 dark:bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono text-gray-900 dark:text-gray-100;
+  }
+  
+  .prose pre {
+    @apply bg-gray-800 dark:bg-gray-900 text-gray-100 p-3 rounded-lg overflow-x-auto my-3;
+  }
+  
+  .prose pre code {
+    @apply bg-transparent p-0;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-blue-500 dark:border-cyan-400 pl-4 italic text-gray-700 dark:text-gray-300 my-3;
+  }
+  
+  .prose hr {
+    @apply border-gray-300 dark:border-gray-600 my-4;
+  }
+  
+  .prose a {
+    @apply text-blue-600 dark:text-cyan-400 hover:underline;
+  }
+}

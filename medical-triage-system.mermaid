@@ -1,0 +1,24 @@
+flowchart TD
+    A[Patient Query] --> B[Intake Router]
+    
+    B -->|Simple Symptoms| C[AI Triage]
+    B -->|Complex/Unclear| D[Clarification]
+    B -->|Needs History| E[RAG: Fetch EHR]
+    
+    E --> C
+    D --> C
+    
+    C --> F{Risk Score}
+    
+    F -->|Low| G[Self-Care Generator]
+    F -->|Med/High| H[Doctor Queue]
+    
+    G --> I[Patient Response]
+    H --> J[Clinical Review]
+    
+    K[Audit Log] -.-> C
+    K -.-> H
+    
+    style F fill:#ff9999
+    style H fill:#99ccff
+    style G fill:#99ff99

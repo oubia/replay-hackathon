@@ -1,0 +1,7 @@
+{
+  "command": "",
+  "serverUrl": "https://oubia.me/",
+  "authenticateProxy": false,
+  "autoDetectDevServer": true,
+  "commitMode": "commits"
+}
